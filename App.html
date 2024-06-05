@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="App.css">
+        <script src="https://kit.fontawesome.com/813721c2c5.js" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+
+    </head>
+    <body>
+        <header class="header">
+            <a href="#home" class="mylogo">My.<span>Portfolio</span></a>
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">Intro</a>
+                <a href="#">Skills</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+       <br>
+       <br>
+       <br>
+       <div class="main">
+        <section class="sec">
+
+
+           <h1 class="animate" >Hi! My name is Kapkap Daniel Madubye, Welcome to My Portfolio...</h1>
+
+        </section>
+
+        <section class="sec">
+
+           
+                
+                
+                <p class="about" >
+                    I’m a tech enthusiast by day I dive into dynamic world of technology, navigating through lines of code 
+                    and exploring the latest innovations. Outside the digital realm, I have love for sport specifically soccer and rugby, 
+                    I find joy in the rush of competition and the camaraderie that sports bring. Whether it’s coding or going to gym,
+                    they both brings a unique blend of analytical thinking.
+                    I am ready to bring a fresh perspective and innovation problem-solving skills 
+                    to a collaborative team environment. Committed to continuous learning and growth in software development.<br>
+                </p>
+
+        </section>
+
+
+        <section id="auto" class="sec">
+           
+            
+            <h2 class="animate">I am Proficient in <span class="Auto"></span></h3><br>
+        </section>
+
+        
+
+        <section class="sec">
+           
+            
+        <div class="image-container">
+           
+            <img src="img.jpeg" alt="Kapkap Madubye" >
+        </div>
+        <div class="question">
+            <p >That's me right there...</p>
+            <button id="openPopupBtn" class="button-92">Rate my appearance</button>
+        </div>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>i'm just Kidding</h2>
+                <p>Thank you for Interacting with the Web!!</p>
+            </div>
+        </div>
+           
+        </section>
+
+        <section id="contacts" class="sec">
+           <div class="contacts"> 
+            <h2>Contacts</h2>  
+            <a href="./Letter of recommendation for kapkap.pdf"  download="Letter of Recommendation" target="_blank"><i class="fa-solid fa-download"></i>Letter of Recommendation</a>
+                <a><i class="fa-solid fa-phone"></i> Mobile Number: +27 61 349 6314</a>
+                <a ><i class="fa-solid fa-envelope"></i>Email: danielkapukapu@gmail.com</a>
+            </div>
+            <div class="socials">
+                <h2>Socials</h2>
+                <a href='https://www.linkedin.com/in/kapkap-madubye-8a3139222/' target="_blank"><i class="fa-brands fa-linkedin"></i>Linkedin</a>
+                <a href='https://github.com/kapkap-madubye?tab=repositories' target="_blank"><i class="fa-brands fa-github"></i>github</a>
+                <a href="https://x.com/DanielKapkap" target="_blank"><i class="fa-brands fa-x-twitter"></i>X-Twitter</a>
+            </div>
+            
+          
+
+         
+        </section>
+    </div>
+
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+    const faders = document.querySelectorAll('.sec');
+
+    const appearOptions = {
+        threshold: 0,
+        rootMargin: "0px 0px -100px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            }
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+});
+
+//pop up function
+document.addEventListener("DOMContentLoaded", function() {
+    const openPopupBtn = document.getElementById("openPopupBtn");
+    const popup = document.getElementById("popup");
+    const closeBtn = document.querySelector(".close");
+
+    openPopupBtn.addEventListener("click", function() {
+        popup.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", function() {
+        popup.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+});
+
+
+            
+            var typed=new Typed('.Auto',{
+                strings: ["C#","C++","Python","HTML/CSS","JavaScript","ReactJs","SQL"],
+                typeSpeed:220,
+                backSpeed:220,
+                loop:true
+            });
+        </script>
+    </body>
+</html>
